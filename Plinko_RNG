@@ -1,7 +1,75 @@
-while wait() do
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+
+local Window = Rayfield:CreateWindow({
+   Name = "PlinkoRNG",
+   Icon = 0,
+   LoadingTitle = "PlinkoRNG",
+   LoadingSubtitle = "by ghostiki",
+   Theme = "Amethyst",
+
+   DisableRayfieldPrompts = false,
+   DisableBuildWarnings = false,
+
+   ConfigurationSaving = {
+      Enabled = true,
+      FolderName = nil,
+      FileName = "PlinkoRNG"
+   }
+})
+
+local Tab = Window:CreateTab("Main", 0)
+
+local Prestige = Tab:CreateButton({
+    Name = "Auto Prestige",
+    Callback = function()
+    while wait() do
+        local args = {[1] = {["Cash"] = 1000000000000000000}}
+        game:GetService("ReplicatedStorage"):WaitForChild("Add"):FireServer(unpack(args))
+        wait(1.5)
+        local args = {[1] = 1}
+        game:GetService("ReplicatedStorage"):WaitForChild("Prestige"):FireServer(unpack(args))
+        local args = {[1] = {[1] = {["button_path"] = "MainUI.DropButton", ["button_name"] = "DropButton"}}}
+        game:GetService("ReplicatedStorage"):WaitForChild("BloxbizRemotes"):WaitForChild("OnSendGuiImpressions"):FireServer(unpack(args))
+    end
+    end,
+})
+
+local M = Tab:CreateButton({
+    Name = "+1M",
+    Callback = function()
+    local args = {[1] = {["Cash"] = 1000000}}
+    game:GetService("ReplicatedStorage"):WaitForChild("Add"):FireServer(unpack(args))
+    end,
+})
+
+local B = Tab:CreateButton({
+    Name = "+1B",
+    Callback = function()
+    local args = {[1] = {["Cash"] = 1000000000}}
+    game:GetService("ReplicatedStorage"):WaitForChild("Add"):FireServer(unpack(args))
+    end,
+})
+
+local T = Tab:CreateButton({
+    Name = "+1T",
+    Callback = function()
+    local args = {[1] = {["Cash"] = 1000000000000}}
+    game:GetService("ReplicatedStorage"):WaitForChild("Add"):FireServer(unpack(args))
+    end,
+})
+
+local Qa = Tab:CreateButton({
+    Name = "+1Qa",
+    Callback = function()
+    local args = {[1] = {["Cash"] = 1000000000000000}}
+    game:GetService("ReplicatedStorage"):WaitForChild("Add"):FireServer(unpack(args))
+    end,
+})
+
+local Qi = Tab:CreateButton({
+    Name = "+1Qi",
+    Callback = function()
     local args = {[1] = {["Cash"] = 1000000000000000000}}
     game:GetService("ReplicatedStorage"):WaitForChild("Add"):FireServer(unpack(args))
-    wait(1)
-    local args = {[1] = 1}
-    game:GetService("ReplicatedStorage"):WaitForChild("Prestige"):FireServer(unpack(args))
-end
+    end,
+})
