@@ -1,0 +1,7 @@
+while wait() do
+    local args = {[1] = {["Cash"] = 1000000000000000000}}
+    game:GetService("ReplicatedStorage"):WaitForChild("Add"):FireServer(unpack(args))
+    wait(1)
+    local args = {[1] = 1}
+    game:GetService("ReplicatedStorage"):WaitForChild("Prestige"):FireServer(unpack(args))
+end
